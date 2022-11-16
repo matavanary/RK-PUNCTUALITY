@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Bangkok');
 
        if($conn)
        {
-           echo "Database Connected.";
+        //    echo "Database Connected.";
         }else{
            die( print_r( sqlsrv_errors(), true));
        }
