@@ -13,7 +13,26 @@ include('header.php');?>
 			</div>
 		</form>		
 	</div>
-	<br><hr><br>
+	<br><hr>
+	<?php 
+		include_once("db_connect.php");
+		$sql_numrow = "SELECT COUNT(*) NUMROWS FROM DIGITALTENKO_FEEDBACKDRIVER";
+		$query_numrow = sqlsrv_query( $conn, $sql_numrow);
+		$result_numrow = sqlsrv_fetch_array($query_numrow, SQLSRV_FETCH_ASSOC);
+		$NUMROWS=$result_numrow["NUMROWS"];
+
+		$sql_filenamescount = "SELECT COUNT(DISTINCT FILES_NAMES) FILESNAMESCOUNT FROM DIGITALTENKO_FEEDBACKDRIVER";
+		$query_filenamescount = sqlsrv_query( $conn, $sql_filenamescount);
+		$result_filenamescount = sqlsrv_fetch_array($query_filenamescount, SQLSRV_FETCH_ASSOC);
+		$FILESNAMESCOUNT=$result_filenamescount["FILESNAMESCOUNT"];
+
+		if($serverName=="RK-168N\SQLEXPRESS"){
+			$usedatabase="LOCALHOST";
+		}else if($serverName=="61.91.5.110"){
+			$usedatabase="SERVER";
+		}
+		echo "<center><h3>ข้อมูลจากฐานข้อมูล ".$usedatabase." รวม ".$NUMROWS." ชุด จาก ".$FILESNAMESCOUNT." ไฟล์</h3></center>" ; 
+	?>
 	<table id="myTable" style="width:100%" class="display table table-bordered table-striped">
 		<thead>
 			<tr>
