@@ -5,7 +5,7 @@ include('header.php');?>
 <script type="text/javascript" src="js/dropzone.js"></script>
 <?php include('container.php');?>
 <div class="container">
-	<h2>วิธีใช้: ลากและวางไฟล์ที่ต้องการอัปโหลดรายชื่อ</h2>	
+	<h2>วิธีใช้: ลากและวางไฟล์รายชื่อที่ต้องการอัปโหลด</h2>	
 	<div class="file_upload">
 		<form action="file_upload.php" class="dropzone"  method="post" enctype="multipart/form-data">
 			<div class="dz-message needsclick">
