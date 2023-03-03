@@ -66,7 +66,7 @@ include('header.php');?>
 </div>
 <script>
         $(document).ready(function () {
-            $("#myTable").DataTable();
+            $("#myTable").DataTable({order: [[0, "desc"]],});                                                                                        
         });
 </script>
 <?php include('footer.php');?>
